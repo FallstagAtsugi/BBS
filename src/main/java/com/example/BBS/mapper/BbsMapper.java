@@ -10,4 +10,6 @@ public  interface BbsMapper {
 
     public  List<Entity> selectAll();
 
+    public void add(Entity entity);
+
 }
