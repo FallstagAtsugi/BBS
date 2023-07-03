@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>掲示板</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+		table { border-collapse: collapse; }
+		table th { padding: 10px; border: solid 1px black; }
+		table td { padding: 3px 10px; border: solid 1px black; }
+    </style>
+</head>
+<body>
+<h1>掲示板へようこそ！</h1>
+<table>
+    <form method="post" action="/" th:object="${formModel}">
+        <tr>
+            <td><label>名前</label></td>
+            <!--            <td><input type="text" name="name" th:value="*{name}" /></td>-->
+        </tr>
+        <tr>
+            <td><label>投稿内容</label></td>
+            <!--            <td><input type="text" name="post" th:value="*{post}" /></td>-->
+        </tr>
+        <tr>
+            <td><input type="submit"/></td>
+        </tr>
+    </form>
+</table>
+<br/>
+<table>
+    <tr>
+        <th>名前</th>
+        <th>投稿内容</th>
+    </tr>
+    <tr th:each="obj : ${postlist}">
+        <td th:text="${obj.name}"></td>
+        <td th:text="${obj.post}"></td>
+</table>
+</body>
+</html>
