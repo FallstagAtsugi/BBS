@@ -12,14 +12,14 @@
 <body>
 <h1>掲示板へようこそ！</h1>
 <table>
-    <form method="post" action="/" th:object="${formModel}">
+    <form method="post" action="/" th:action="@{/add}">
         <tr>
-            <td><label>名前</label></td>
-            <!--            <td><input type="text" name="name" th:value="*{name}" /></td>-->
+            <td><label for="name">名前</label></td>
+                        <td><input type="text" name="name" id="name"/></td>
         </tr>
         <tr>
-            <td><label>投稿内容</label></td>
-            <!--            <td><input type="text" name="post" th:value="*{post}" /></td>-->
+            <td><label for="details">投稿内容</label></td>
+                        <td><input type="text" name="details" id="details"/></td>
         </tr>
         <tr>
             <td><input type="submit"/></td>

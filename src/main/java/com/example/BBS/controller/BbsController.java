@@ -19,15 +19,21 @@ public class BbsController {
 
     @GetMapping(value = "/greeting")
     public String greeting(@RequestParam(name = "name", required = false, defaultValue = "World")
-                    String name, Model model){
+                                   String name, Model model) {
         model.addAttribute("name", name);
         return "greeting";
     }
 
     @RequestMapping(value = "/")
-    public String index(Model model){
+    public String index(Model model) {
         List<Entity> list = bbsMapper.selectAll();
         model.addAttribute("submissionDetails", list);
         return "index";
+    }
+
+    @RequestMapping(value = "/add")
+    public String add(Entity entity) {
+        bbsMapper.add(entity);
+        return "redirect:/";
     }
 }

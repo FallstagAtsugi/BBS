@@ -6,4 +6,9 @@
     <select id="selectAll" resultType="com.example.BBS.entity.Entity">
         select * from bbs_app
     </select>
+
+    <select id="add" resultType="com.example.BBS.entity.Entity">
+        insert into bbs_app (name, details)
+        values (#{name},#{details})
+    </select>
 </mapper>
