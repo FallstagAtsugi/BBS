@@ -32,9 +32,9 @@
         <th>名前</th>
         <th>投稿内容</th>
     </tr>
-    <tr th:each="obj : ${postlist}">
+    <tr th:each="obj : ${submissionDetails}">
         <td th:text="${obj.name}"></td>
-        <td th:text="${obj.post}"></td>
+        <td th:text="${obj.details}"></td>
 </table>
 </body>
 </html>
